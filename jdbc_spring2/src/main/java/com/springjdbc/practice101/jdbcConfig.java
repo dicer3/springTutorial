@@ -17,7 +17,7 @@ public class jdbcConfig {
     public DriverManagerDataSource getDataSource() {
          DriverManagerDataSource ds = new DriverManagerDataSource();
          ds.setDriverClassName("com.mysql.jdbc.Driver");
-         ds.setUrl("jdbc:mysql://localhost:3306/sringjdbc");
+         ds.setUrl("jdbc:mysql://localhost:3306/springjdbc");
          ds.setUsername("root");
          ds.setPassword("root");
 

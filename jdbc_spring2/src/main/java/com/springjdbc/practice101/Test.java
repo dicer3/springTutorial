@@ -24,7 +24,7 @@ public class Test {
 
         int result = studentDao.insert(student);
 
-        // System.out.println("student added "+result);
+        System.out.println("student added "+result);
 
 
         // Student student = new Student();
