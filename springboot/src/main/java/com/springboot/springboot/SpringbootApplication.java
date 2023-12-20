@@ -53,7 +53,7 @@ public class SpringbootApplication {
 		// how to get the data
 		// findById(id) - 
 
-		//Iterable<User1> itr = userRepository.findAll();
+		// sIterable<User1> itr = userRepository.findAll();
 		
         //Iterator<User1> iterator = itr.iterator();
 
@@ -82,8 +82,8 @@ public class SpringbootApplication {
 		// userByName.forEach(user->System.out.println(user));
 
 
-		List<User1> allUsers = userRepository.getAllUsers();
-		allUsers.forEach(user->System.out.println(user));
+		// List<User1> allUsers = userRepository.getAllUsers();
+		// allUsers.forEach(user->System.out.println(user));
 	}
 
 }
