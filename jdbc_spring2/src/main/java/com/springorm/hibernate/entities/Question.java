@@ -15,7 +15,7 @@ public class Question {
     private int questionId;
     private String question;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name="a_id")
     private Answer answer;
 
