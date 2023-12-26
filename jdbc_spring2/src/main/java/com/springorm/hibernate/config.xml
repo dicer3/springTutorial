@@ -34,6 +34,8 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.springorm.hibernate.entities.Student</value>
+                <value>com.springorm.hibernate.entities.Question</value>
+                <value>com.springorm.hibernate.entities.Answer</value>
             </list>
         </property>
     </bean>

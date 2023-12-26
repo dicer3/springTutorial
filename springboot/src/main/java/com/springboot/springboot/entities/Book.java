@@ -19,7 +19,8 @@ public class Book {
     private int id;
     private String title;
 
-    @OneToOne(cascade =  CascadeType.ALL)
+    //@OneToOne(cascade =  CascadeType.ALL)
+    @OneToOne
     private Author author;
 
     // Default constructor is needed by JPA

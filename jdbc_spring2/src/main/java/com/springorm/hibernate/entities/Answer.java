@@ -1,8 +1,10 @@
 package com.springorm.hibernate.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Answer {
     @Id
     @Column(name = "answer_id")
