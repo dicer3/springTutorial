@@ -16,7 +16,10 @@ public class Student {
     @Column(name = "city")
     public String studentCity;
 
-    
+    private Certificate certi;
+
+    public Student() {
+    }
     public Student(int studentId, String studentName, String studentCity) {
         this.studentId = studentId;
         this.studentName = studentName;
@@ -39,6 +42,12 @@ public class Student {
     }
     public void setStudentCity(String studentCity) {
         this.studentCity = studentCity;
+    }
+    public Certificate getCerti() {
+        return certi;
+    }
+    public void setCerti(Certificate certi) {
+        this.certi = certi;
     }
 
     

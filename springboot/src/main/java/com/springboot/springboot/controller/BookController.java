@@ -30,6 +30,7 @@ public class BookController {
     public ResponseEntity<List<Book>> getBooks() {
         List<Book> list = this.bookService.getAllBooks();
         if(list.size() == 0){
+            System.out.println("coming here ");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         //return ResponseEntity.of(Optional.of(list));
