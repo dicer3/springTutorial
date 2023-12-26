@@ -1,5 +1,7 @@
 package com.springorm.hibernate;
 
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -41,30 +43,43 @@ public class Test {
 
         Question q1 = new Question();
         q1.setQuestionId(1212);
-        q1.setQuestion("what is java !!");
+        q1.setQuestion("what is java ?");
 
         Answer a1 = new Answer();
         a1.setAnswerId(357);
-        a1.setAnswer("Java is a Prog Language");
-
-        q1.setAnswer(a1);
-
-        Question q2 = new Question();
-        q2.setQuestionId(242);
-        q2.setQuestion("what is collection framework !!");
+        a1.setAnswer("with the help of java we can create softwares");
+        a1.setQuestion(q1);
 
         Answer a2 = new Answer();
-        a2.setAnswerId(354);
-        a2.setAnswer("api to work with objects in java");
+        a2.setAnswerId(33);
+        a2.setAnswer("Java is a Prog Language");
+        a2.setQuestion(q1);
 
-        q2.setAnswer(a2);
+        Answer a3 = new Answer();
+        a3.setAnswerId(142);
+        a3.setAnswer("java has different type of frameworks");
+        a3.setQuestion(q1);
 
-        studentDao.insertAnswer(a1);
-        studentDao.insertAnswer(a2);
+        q1.setAnswer(Arrays.asList(a1,a2,a3));
+        // Question q2 = new Question();
+        // q2.setQuestionId(242);
+        // q2.setQuestion("what is collection framework !!");
+
+        // Answer a2 = new Answer();
+        // a2.setAnswerId(354);
+        // a2.setAnswer("api to work with objects in java");
+
+        // q2.setAnswer(a2);
+
+        //studentDao.insertAnswer(a1);
+        // studentDao.insertAnswer(a2);
 
         studentDao.insertQuestion(q1);
+        studentDao.insertAnswer(a1);
+        studentDao.insertAnswer(a2);
+        studentDao.insertAnswer(a3);
 
-        studentDao.insertQuestion(q2);
+        // studentDao.insertQuestion(q2);
 
 
     }

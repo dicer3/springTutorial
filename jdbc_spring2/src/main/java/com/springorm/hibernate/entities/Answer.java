@@ -3,19 +3,27 @@ package com.springorm.hibernate.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Answer {
     @Id
     @Column(name = "answer_id")
     private int answerId;
+    
+   // 
     private String answer;
+
+    @ManyToOne
+    private Question question;
 
     public Answer() {
     }
-    public Answer(int answerId, String answer) {
+    public Answer(int answerId, String answer,Question question) {
         this.answerId = answerId;
         this.answer = answer;
+        this.question = question;
     }
 
     public int getAnswerId() {
@@ -29,6 +37,12 @@ public class Answer {
     }
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+    public Question getQuestion() {
+        return question;
+    }
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     
