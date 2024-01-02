@@ -36,6 +36,8 @@
                 <value>com.springorm.hibernate.entities.Student</value>
                 <value>com.springorm.hibernate.entities.Question</value>
                 <value>com.springorm.hibernate.entities.Answer</value>
+                <value>com.springorm.hibernate.entities.Emp</value>
+                <value>com.springorm.hibernate.entities.Project</value>
             </list>
         </property>
     </bean>

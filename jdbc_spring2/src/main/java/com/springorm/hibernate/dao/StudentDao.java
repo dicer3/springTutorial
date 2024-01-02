@@ -6,6 +6,8 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.springorm.hibernate.entities.Answer;
+import com.springorm.hibernate.entities.Emp;
+import com.springorm.hibernate.entities.Project;
 import com.springorm.hibernate.entities.Question;
 import com.springorm.hibernate.entities.Student;
 
@@ -32,6 +34,16 @@ public class StudentDao {
     @Transactional
     public int insertAnswer(Answer answer) {
         return (Integer)this.hibernateTemplate.save(answer);
+    }
+
+    @Transactional
+    public int insertEmp(Emp emp) {
+        return (Integer)this.hibernateTemplate.save(emp);
+    }
+
+    @Transactional
+    public int insertProject(Project project) {
+        return (Integer)this.hibernateTemplate.save(project);
     }
 
     public Student getStudent(int studentId) {
