@@ -3,6 +3,8 @@ package com.redis.redis.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +18,7 @@ import com.redis.redis.model.User;
 import com.redis.redis.service.UserService;
 
 @RestController
+@EnableCaching
 public class UserController {
     
     @Autowired
@@ -40,15 +43,19 @@ public class UserController {
     }
 
     @GetMapping("/user/{id}")
-    public ResponseEntity<User> fetchUserById(@PathVariable("id") Long id) {
+    @Cacheable(key = "#id", value = "USER")
+    public User fetchUserById(@PathVariable("id") Long id) {
+      System.out.println("in this function");
        User user;
        user = userService.fetchUserById(id);
        System.out.println("user "+user);
-       return ResponseEntity.ok(user);
+      return user;
+     //  return ResponseEntity.ok(user);
     }
 
     @DeleteMapping("/user/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable("id") Long id) {
+      System.out.println("fine !!!");
         boolean result = userService.deleteUser(id);
         if(result)
            return ResponseEntity.ok("User deleted Successfully");
