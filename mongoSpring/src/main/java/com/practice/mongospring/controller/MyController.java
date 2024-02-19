@@ -5,6 +5,7 @@ import com.practice.mongospring.rep.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/student")
@@ -21,7 +22,6 @@ public class MyController {
 
     @GetMapping("/")
     public ResponseEntity<?> getStudents(){
-
         return ResponseEntity.ok(this.studentRepository.findAll());
     }
 }
